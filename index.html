@@ -21,7 +21,6 @@
         <p>
             모든 맛집 예약, 결제 없이 0원으로
         </p>
-
         <div class="menu">
             <ul>
                 <li>
@@ -69,29 +68,78 @@
                     </li>
                 </ul>
             </div>
-
         </div>
 
-        <div class="main_text">
-            <h2>
-                한눈에 확인하는 <br>
-                맛집에 대한 모든 정보
-            </h2>
-            <p>
-                놓칠 수 없는 신상 맛집의 정보까지 <br>
-                세세하게 전달해드릴게요. <br>
-                나만의 새로운 맛집을 맞이해보세요.
-            </p>
+
+
+        <div class="slider-container">
+            <ul class="slides">
+                <li>
+                    <div class="main_text">
+                        <h2>
+                            한눈에 확인하는 <br>
+                            맛집에 대한 모든 정보
+                        </h2>
+                        <p>
+                            놓칠 수 없는 신상 맛집의 정보까지 <br>
+                            세세하게 전달해드릴게요. <br>
+                            나만의 새로운 맛집을 맞이해보세요.
+                        </p>
+                    </div>
+                    <img src="/img/main_img1.png" alt="메인이미지1">
+                    <!-- 이전/다음 버튼 -->
+                    <button class="prev">◀</button>
+                    <button class="next">▶</button>
+
+                    <!-- 닷 네비게이션 -->
+                    <div class="dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                </li>
+                <li>
+                    <div class="main_text">
+                        <h2>
+                            원하는 조건으로 한 번에 <br>
+                            새로워진 맛집 검색
+                        </h2>
+                        <p>
+                            나만 알고싶은 히든 플레이스 <br>
+                            숨은 보석같은 공간이 궁금할 때
+                        </p>
+                    </div>
+                    <img src="/img/main_img2.png" alt="메인이미지2">
+                </li>
+                <li>
+                    <div class="main_text">
+                        <h2>
+                            파인다이닝, 핫플 등 <br>
+                            10,000여 개의 맛집
+                        </h2>
+                        <p>
+                            파인다이닝이 처음이라면 <br>
+                            성공적인 입문을 위한 추천
+                        </p>
+                    </div>
+                    <img src="/img/main_img3.png" alt="메인이미지3">
+                </li>
+            </ul>
+
+
         </div>
     </header>
 
     <section id="INTRODUCE_BOX">
         <div class="title">
-            <p>
+            <p class="sub_title">
                 ABOUT CATCHTABLE
             </p>
             <h2>
+                <span>●</span>
                 캐치테이블
+                <span>●</span>
             </h2>
             <p>
                 300만 이상 유저가 선택한 맛집 예약 & 웨이팅 앱 <br>
@@ -99,8 +147,8 @@
                 예약, 웨이팅이 가능합니다.
             </p>
         </div>
-        <figure class="sec1_bg"></figure>
-        <div>
+        
+        <div class="img_box">
             <img src="./img/sec1_img1.png" alt="한식">
             <img src="./img/sec1_img2.png" alt="전">
             <img src="./img/sec1_img3.png" alt="스테이크">
@@ -108,6 +156,7 @@
             <img src="./img/sec1_img5.png" alt="연어">
             <img src="./img/sec1_img6.png" alt="파스타">
         </div>
+        <figure class="sec1_bg"></figure>
     </section>
 
     <section id="NEARBY_RESTAURANT">
