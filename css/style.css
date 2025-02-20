@@ -37,10 +37,19 @@ body {
 }
 
 
-/* 메인 */
+/* 헤더 */
+
+.main_sec {
+    position: relative;
+    height: 100vh;
+}
 
 header {
-    background-color: #b9b9b9;
+    z-index: 200;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 header>p {
@@ -60,10 +69,8 @@ header>p {
     height: 64px;
     display: flex;
     justify-content: space-between;
-    z-index: 200;
     line-height: 64px;
     /* border: solid 1px #FF3D00; */
-    position: relative;
 }
 
 .menu>ul {
@@ -83,18 +90,17 @@ header>p {
 }
 
 .logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 40px;
     font-weight: 600;
     color: #FF3D00;
     font-family: 'GmarketSansMedium';
+    padding-right: 28px;
 }
 
 .icon_box>ul {
     display: flex;
+    width: 457px;
+    justify-content: flex-end;
 }
 
 .icon_box>ul>li {
@@ -102,34 +108,51 @@ header>p {
     margin-top: 10px;
 }
 
-/* 메인 */
+/* 메인 슬라이드 */
 
 .slider-container {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    position: absolute;
+    top: 0;
 }
 
 .slides {
     display: flex;
     width: 600%;
+    height: 100%;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
+.slide > li > img {
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
 }
 
 .slides>li {
     position: relative;
+    width: 99vw;
 }
 
 .main_text {
     position: absolute;
-    top: 240px;
-    left: 80px;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
     color: #fff;
+}
+
+.main_text > h2 {
+    font-size: 54px;
+    font-weight: 600;
+    line-height: 68px;
+    margin-bottom: 40px;
+}
+
+.main_text > p {
+    font-size: 18px;
+    line-height: 28px;
 }
 
 /* 이전/다음 버튼 */
@@ -168,7 +191,7 @@ header>p {
 .dot {
     width: 15px;
     height: 15px;
-    background: rgba(0, 0, 0, 0.2);
+    background-color: #fff;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -180,7 +203,6 @@ header>p {
 #INTRODUCE_BOX {
     width: 100%;
     height: 800px;
-    background-color: #b9b9b9;
     position: relative;
 }
 
@@ -198,7 +220,7 @@ header>p {
 .title > h2 {
     font-size: 48px;
     font-weight: 800;
-    padding: 20px 0px 32px 0px;
+    padding: 16px 0px 20px 0px;
 }
 
 .title > h2 > span {
@@ -247,17 +269,109 @@ header>p {
     right: 8%;
 }
 
-/* .sec1_bg{
+.sec1_bg{
     background-image: url(../img/sec1_bg.png);
-    width: 100%;
-    height: 800px;
-    background-size: cover;
-} */
+    width: 902px;
+    height: 450px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-size: cover; */
+}
+
+
+
+
+/* 주변 맛집 추천 */
 
 #NEARBY_RESTAURANT {
     width: 100%;
     height: 1000px;
     background-color: #fafafa;
+
 }
 
+.nearby_sec {
+    width: 1200px;
+    height: 100%;
+    border: solid 1px #FF3D00;
+    margin: 0 auto;
+}
 
+.nearby_sec > .title {
+    text-align: start;
+}
+
+.tab_div{
+    height: 680px;
+    display: flex;
+    border: solid 1px #814c3c;
+    justify-content: space-between;
+}
+
+.tab {
+    width: 80px;
+    list-style: none;
+    height: 35px;
+    font-size: 32px;
+    padding: 40px 0px;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.sec2_imgbox {
+    width: 980px;
+    height: 582px;
+    background-color: #eaeaea;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.store_box {
+    width: 285px;
+    height: 458px;
+    border: solid 1px #814c3c;
+    margin: 0 auto;
+    border-radius: 00px 40px 0px 40px;
+    color: #fff;
+    padding: 20px;
+    background-size: cover;
+    position: relative;
+}
+
+.store_box:nth-child(1){
+    background-image: url(../img/sec02_아루.png);
+}
+
+.store_box:nth-child(2){
+    background-image: url(../img/sec02_콩두명동.png);
+}
+
+.store_box:nth-child(3){
+    background-image: url(../img/sec02_제미.png);
+}
+
+.store_place {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.store_place > span {
+    color: #FF3D00;
+}
+
+.store_contents {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    text-align: end;
+}
+
+.store_contents > h3 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
