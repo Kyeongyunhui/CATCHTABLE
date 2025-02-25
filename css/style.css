@@ -293,21 +293,29 @@ header>p {
 }
 
 .nearby_sec {
-    width: 1200px;
+    /* width: 1200px; */
     height: 100%;
-    border: solid 1px #FF3D00;
-    margin: 0 auto;
+    /* border: solid 1px #FF3D00; */
+    /* margin: 0 auto; */
 }
 
 .nearby_sec > .title {
     text-align: start;
+    width: 1200px;
+    margin: 0 auto;
 }
 
 .tab_div{
     height: 680px;
     display: flex;
-    border: solid 1px #814c3c;
-    justify-content: space-between;
+    /* border: solid 1px #814c3c; */
+    justify-content: center;
+    align-items: center;
+}
+
+.tab_div > ul {
+    margin-right: 120px;
+    padding-left: 100px;
 }
 
 .tab {
@@ -328,12 +336,15 @@ header>p {
     display: flex;
     gap: 20px;
     align-items: center;
+    border-radius: 40px 0 0 40px;
+    padding: 0 74px 0 74px;
+    border-right: 20px solid #FF3D00;
 }
 
 .store_box {
     width: 285px;
     height: 458px;
-    border: solid 1px #814c3c;
+    /* border: solid 1px #814c3c; */
     margin: 0 auto;
     border-radius: 00px 40px 0px 40px;
     color: #fff;
@@ -374,4 +385,102 @@ header>p {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 20px;
+}
+
+
+
+/* 고객 맞춤 매장 추천 */
+
+
+#RECOMMENDED_SEC {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    position: relative;
+}
+
+.RECOMMENDED_RESTAURANT {
+    width: 285px;
+    height: 529px;
+}
+
+
+.carousel-container {
+    width: 1425px;
+    /* 285px * 5 */
+    height: 529px;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid #ccc; */
+}
+
+/* 이미지 트랙: 모든 이미지들을 가로로 나열 */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-top: 20px;
+}
+
+/* 각 이미지 아이템 */
+.RECOMMENDED_RESTAURANT {
+    box-sizing: border-box;
+    min-width: 285px;
+    height: 529px;
+    flex-shrink: 0;
+    box-shadow: 0px 3px 5px 0px rgba(100, 100, 100, 0.5);;
+    background-color: #fff;
+    border-radius: 30px;
+    transform: scale(90%);
+}
+
+.RECOMMENDED_RESTAURANT img {
+    width: 100%;
+    height: 327px;
+    object-fit: cover;
+}
+
+/* 좌우 버튼 */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 104px;
+    z-index: 10;
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
+
+/* 닷 네비게이션 */
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #333;
 }

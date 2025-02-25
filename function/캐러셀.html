@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>무한 루프 캐러셀</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px;
+        }
+
+        /* 캐러셀 컨테이너: 5개 이미지가 보이도록 고정 */
+        .carousel-container {
+            width: 1425px;
+            /* 285px * 5 */
+            height: 529px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+
+        /* 이미지 트랙: 모든 이미지들을 가로로 나열 */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        /* 각 이미지 아이템 */
+        .RECOMMENDED_RESTAURANT {
+            box-sizing: border-box;
+            min-width: 285px;
+            height: 529px;
+            flex-shrink: 0;
+            box-shadow: 0px 3px 5px 0px rgba(100, 100, 100, 0.5);;
+            background-color: #fff;
+            border-radius: 30px;
+            transform: scale(90%);
+        }
+
+        .RECOMMENDED_RESTAURANT img {
+            width: 100%;
+            height: 327px;
+            object-fit: cover;
+        }
+
+        /* 좌우 버튼 */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        /* 닷 네비게이션 */
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="RECOMMENDED_SEC">
+        <button class="carousel-button left">&#10094;</button>
+        <button class="carousel-button right">&#10095;</button>
+        <div class="carousel-container">
+            <!-- 왼쪽 버튼: 이전 슬라이드 -->
+            <!-- 이미지 트랙 -->
+            <div class="carousel-track">
+                <!-- 총 15개의 이미지 (예시로 placeholder 사용) -->
+                <div class="RECOMMENDED_RESTAURANT">
+                    <img src="../img/sec3_차경.png" alt="차경">
+                    <h3>
+                        차경
+                    </h3>
+                    <p>
+                        <span>
+                            ★
+                        </span>
+                        <span>
+                            4.8
+                        </span>
+                        다이닝바 · 해방촌
+                    </p>
+                    <p>
+                        서울의 경치를 빌려와 제철 식재 <br>
+                        료를 사용한 한식 베이스 요리를 <br>
+                        와인, 전통주와 함께 즐길 수 있는 <br>
+                        다이닝바
+                    </p>
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=2" alt="이미지 2">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=3" alt="이미지 3">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=4" alt="이미지 4">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=5" alt="이미지 5">
+                </div>
+
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=6" alt="이미지 6">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=7" alt="이미지 7">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=8" alt="이미지 8">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=9" alt="이미지 9">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=10" alt="이미지 10">
+                </div>
+
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=11" alt="이미지 11">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=12" alt="이미지 12">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=13" alt="이미지 13">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=14" alt="이미지 14">
+                </div>
+                <div class="RECOMMENDED_RESTAURANT"><img src="https://via.placeholder.com/285x529?text=15" alt="이미지 15">
+                </div>
+            </div>
+            <!-- 오른쪽 버튼: 다음 슬라이드 -->
+
+        </div>
+
+        <!-- 닷 네비게이션 -->
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const leftButton = document.querySelector('.carousel-button.left');
+        const rightButton = document.querySelector('.carousel-button.right');
+        const dots = document.querySelectorAll('.dot');
+        const itemsPerSlide = 5;
+        // 총 15개의 이미지이므로 실제 슬라이드는 3개
+        const totalActualSlides = 3;
+        const slideWidth = 1425; // 캐러셀 컨테이너 너비 (285px * 5)
+        let currentSlide = 0;
+
+        // 첫 슬라이드(이미지 1~5)를 복제하여 트랙 끝에 추가 (무한 루프를 위한 클론)
+        const carouselItems = document.querySelectorAll('.RECOMMENDED_RESTAURANT');
+        for (let i = 0; i < itemsPerSlide; i++) {
+            const clone = carouselItems[i].cloneNode(true);
+            track.appendChild(clone);
+        }
+
+        // 오른쪽 버튼: 다음 슬라이드 (오른쪽으로 이동, wrap-around 적용)
+        rightButton.addEventListener('click', () => {
+            currentSlide++;
+            updateCarousel();
+        });
+
+        // 왼쪽 버튼: 이전 슬라이드 (왼쪽으로 이동)
+        leftButton.addEventListener('click', () => {
+            if (currentSlide === 0) return; // 첫 슬라이드라면 동작하지 않음
+            currentSlide--;
+            updateCarousel();
+        });
+
+        // 닷 클릭 시 해당 슬라이드로 이동 (복제된 슬라이드가 있을 경우 index 처리)
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // 캐러셀 업데이트: 트랙 이동 및 닷 상태 변경
+        function updateCarousel() {
+            track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+            // clone 슬라이드일 경우(현재 슬라이드가 3이면) 닷은 첫 번째로 표기
+            const dotIndex = (currentSlide === totalActualSlides) ? 0 : currentSlide;
+            dots.forEach((dot, index) => {
+                if (index === dotIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // 트랜지션 종료 후, 클론 슬라이드에 도달하면 즉시 처음 슬라이드로 전환 (무한 루프 효과)
+        track.addEventListener('transitionend', () => {
+            if (currentSlide === totalActualSlides) {
+                track.style.transition = 'none';
+                currentSlide = 0;
+                track.style.transform = `translateX(0px)`;
+                // reflow 강제 후 다시 transition 복구
+                void track.offsetWidth;
+                track.style.transition = 'transform 0.5s ease';
+            }
+        });
+    </script>
+</body>
+
+</html>
