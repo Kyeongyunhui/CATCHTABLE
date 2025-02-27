@@ -161,7 +161,7 @@ header>p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0);
     color: white;
     border: none;
     padding: 15px;
@@ -387,44 +387,53 @@ header>p {
     margin-bottom: 20px;
 }
 
+.store_contents > p{
+    display: flex;
+    align-items: center;
+}
+
+.store_contents > p > span img {
+    display: block;
+    padding-right: 5px;
+}
 
 
 /* 고객 맞춤 매장 추천 */
 
 
-#RECOMMENDED_SEC {
-    font-family: sans-serif;
+#recommended_sec {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 40px;
     position: relative;
+    background-color: #f3f3f3;
 }
 
-.RECOMMENDED_RESTAURANT {
+.recommended_restaurant {
     width: 285px;
     height: 529px;
 }
 
 
-.carousel-container {
+.carousel_container {
     width: 1425px;
     /* 285px * 5 */
     height: 529px;
+    padding-bottom: 60px;
     overflow: hidden;
     position: relative;
     /* border: 1px solid #ccc; */
 }
 
 /* 이미지 트랙: 모든 이미지들을 가로로 나열 */
-.carousel-track {
+.carousel_track {
     display: flex;
     transition: transform 0.5s ease;
     margin-top: 20px;
 }
 
 /* 각 이미지 아이템 */
-.RECOMMENDED_RESTAURANT {
+.recommended_restaurant {
     box-sizing: border-box;
     min-width: 285px;
     height: 529px;
@@ -435,14 +444,50 @@ header>p {
     transform: scale(90%);
 }
 
-.RECOMMENDED_RESTAURANT img {
+.recommended_restaurant img {
     width: 100%;
     height: 327px;
     object-fit: cover;
 }
 
+.restaurant_text {
+    margin: 12px;
+}
+
+.restaurant_text > h3 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.restaurant_text > p {
+    display: flex;
+    align-items: center;
+}
+
+.restaurant_sub_contents > span > img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.restaurant_sub_contents > span {
+    font-weight: 800;
+    margin-right: 6px;
+    color: #000;
+}
+
+.restaurant_sub_contents {
+    color: #797979;
+    margin: 6px 0px;
+}
+
+.restaurant_main_contents {
+    margin-top: 20px;
+    line-height: 18px;
+}
+
 /* 좌우 버튼 */
-.carousel-button {
+.carousel_button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -456,11 +501,11 @@ header>p {
     z-index: 10;
 }
 
-.carousel-button.left {
+.carousel_button.left {
     left: 10px;
 }
 
-.carousel-button.right {
+.carousel_button.right {
     right: 10px;
 }
 
@@ -482,5 +527,30 @@ header>p {
 }
 
 .dot.active {
-    background: #333;
+    background: #FF3D00;
+}
+
+
+#MAGAZINE_SEC {
+    width: 100%;
+    height: 1384px;
+    padding: 100px 0;
+
+}
+
+.magazine_warpper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.div_text > h2 {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 68px;
+    color: #FF3D00;
+}
+
+.div_text > p {
+    margin: 20px 0;
+    font-size: 18px;
 }
