@@ -332,6 +332,12 @@ header>p {
 .sec2_imgbox {
     width: 980px;
     height: 582px;
+
+}
+
+.store {
+    width: 980px;
+    height: 582px;
     background-color: #eaeaea;
     display: flex;
     gap: 20px;
@@ -339,6 +345,7 @@ header>p {
     border-radius: 40px 0 0 40px;
     padding: 0 74px 0 74px;
     border-right: 20px solid #FF3D00;
+
 }
 
 .store_box {
