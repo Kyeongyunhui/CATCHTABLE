@@ -1,78 +1,78 @@
-// const slides = document.querySelector('.slides');
-// const mainDots = document.querySelectorAll('.dot');
-// const prevBtn = document.querySelector('.prev');
-// const nextBtn = document.querySelector('.next');
-// let currentIndex = 0;
-// const totalSlides = 3; // 실제 슬라이드 개수 (복사된 6번째 슬라이드는 제외)
-// let interval;
+const slides = document.querySelector('.slides');
+const mainDots = document.querySelectorAll('.slideDots');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+const totalSlides = 3; // 실제 슬라이드 개수 (복사된 6번째 슬라이드는 제외)
+let interval;
 
-// function updateSlide(index) {
-//     slides.style.transition = 'transform 0.5s ease-in-out';
-//     slides.style.transform = `translateX(-${index * 100}vw)`;
+function updateSlide(index) {
+    slides.style.transition = 'transform 0.5s ease-in-out';
+    slides.style.transform = `translateX(-${index * 100}'vw)`;
 
-//     // 닷 업데이트
-//     mainDots.forEach(dot => dot.classList.remove('active'));
-//     mainDots[index % totalSlides].classList.add('active');
-// }
+    // 닷 업데이트
+    mainDots.forEach(slideDots => slideDots.classList.remove('active'));
+    mainDots[index % totalSlides].classList.add('active');
+}
 
-// function nextSlide() {
-//     currentIndex++;
-//     updateSlide(currentIndex);
+function nextSlide() {
+    currentIndex++;
+    updateSlide(currentIndex);
 
-//     if (currentIndex === totalSlides) {
-//         setTimeout(() => {
-//             slides.style.transition = 'none';
-//             currentIndex = 0;
-//             slides.style.transform = `translateX(0vw)`;
-//         }, 500);
-//     }
-// }
+    if (currentIndex === totalSlides) {
+        setTimeout(() => {
+            slides.style.transition = 'none';
+            currentIndex = 0;
+            slides.style.transform = `translateX(0vw)`;
+        }, 500);
+    }
+}
 
-// function prevSlide() {
-//     if (currentIndex === 0) {
-//         slides.style.transition = 'none';
-//         currentIndex = totalSlides;
-//         slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
+function prevSlide() {
+    if (currentIndex === 0) {
+        slides.style.transition = 'none';
+        currentIndex = totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
 
-//         setTimeout(() => {
-//             slides.style.transition = 'transform 0.5s ease-in-out';
-//             currentIndex--;
-//             updateSlide(currentIndex);
-//         }, 10);
-//     } else {
-//         currentIndex--;
-//         updateSlide(currentIndex);
-//     }
-// }
+        setTimeout(() => {
+            slides.style.transition = 'transform 0.5s ease-in-out';
+            currentIndex--;
+            updateSlide(currentIndex);
+        }, 10);
+    } else {
+        currentIndex--;
+        updateSlide(currentIndex);
+    }
+}
 
-// function startAutoSlide() {
-//     interval = setInterval(nextSlide, 3000);
-// }
+function startAutoSlide() {
+    interval = setInterval(nextSlide, 3000);
+}
 
-// function resetAutoSlide() {
-//     clearInterval(interval);
-//     startAutoSlide();
-// }
+function resetAutoSlide() {
+    clearInterval(interval);
+    startAutoSlide();
+}
 
-// nextBtn.addEventListener('click', () => {
-//     nextSlide();
-//     resetAutoSlide();
-// });
+nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAutoSlide();
+});
 
-// prevBtn.addEventListener('click', () => {
-//     prevSlide();
-//     resetAutoSlide();
-// });
+prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAutoSlide();
+});
 
-// mainDots.forEach((dot, index) => {
-//     dot.addEventListener('click', () => {
-//         currentIndex = index;
-//         updateSlide(currentIndex);
-//         resetAutoSlide();
-//     });
-// });
+mainDots.forEach((slideDots, index) => {
+    slideDots.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlide(currentIndex);
+        resetAutoSlide();
+    });
+});
 
-// startAutoSlide();
+startAutoSlide();
 
 
 
@@ -151,7 +151,7 @@ track.addEventListener('transitionend', () => {
 
 // 탭메뉴
 const tabs = document.querySelectorAll('.tab');
-        const store = document.querySelectorAll('.store');
+const store = document.querySelectorAll('.store');
         console.log(tabs);
         console.log(store);
 
@@ -161,11 +161,11 @@ const tabs = document.querySelectorAll('.tab');
             // index : 현재 요소의 인덱스(선택)
             // array : 현재 순화중인 배열 자체(선택)
             // });
-            store.addEventListener('click',()=>{
+            tab.addEventListener('click',()=>{
                 tabs.forEach(t => t.classList.remove('active'));
-                tabContent.forEach(tc => tc.classList.remove('active'));
-                store.classList.add('active');
-                document.getElementById('tab_' + store.dataset.tab).classList.add('active');
+                store.forEach(tc => tc.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('tab_' + tab.dataset.tab).classList.add('active');
                 // dataset : HTML 요소의 data-* 속성을 읽거나 설정할 수 있는 js객체
                 // tab.dataset : 요소의 모든 data-tab 번호를 가져옴
                 // tab.dataset.tab : domString이 아닌 tab속성의 값만 빼오겠다는 뜻

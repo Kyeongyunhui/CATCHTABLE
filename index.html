@@ -73,6 +73,16 @@
         </header>
 
         <div class="slider-container">
+            <!-- 이전/다음 버튼 -->
+            <button class="prev"><img src="./img/icon_prev.png" alt="이전"></button>
+            <button class="next"><img src="./img/icon_next.png" alt="다음"></button>
+
+            <!-- 닷 네비게이션 -->
+            <div class="slideDots">
+                <span class="slideDot active"></span>
+                <span class="slideDot"></span>
+                <span class="slideDot"></span>
+            </div>
             <ul class="slides">
                 <li>
                     <div class="main_text">
@@ -87,16 +97,7 @@
                         </p>
                     </div>
                     <img src="/img/main_img1.png" alt="메인이미지1">
-                    <!-- 이전/다음 버튼 -->
-                    <button class="prev"><img src="./img/icon_prev.png" alt="이전"></button>
-                    <button class="next"><img src="./img/icon_next.png" alt="다음"></button>
 
-                    <!-- 닷 네비게이션 -->
-                    <div class="dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
 
                 </li>
                 <li>
@@ -174,160 +175,64 @@
                         서울
                     </li>
                     <li class="tab" data-tab="2">
-                       인천
+                        인천
                     </li>
                     <li class="tab" data-tab="3">
-                       부산
+                        부산
                     </li>
                     <li class="tab" data-tab="4">
-                       대전
+                        대전
                     </li>
                     <li class="tab" data-tab="5">
-                       제주
+                        제주
                     </li>
                 </ul>
 
                 <div class="sec2_imgbox">
-                    <!-- 제주 -->
-                    <div class="store" id="tab_5">
+                    <!-- 서울 텝 -->
+                    <div class="store active" id="tab_1">
                         <div class="store_box">
                             <p class="store_place">
                                 <span>1</span>
-                                한립읍
+                                강남
                             </p>
                             <div class="store_contents">
                                 <h3>
-                                    종문
+                                    아루
                                 </h3>
                                 <p>
                                     <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.9(406) · 제주 · 이자카야
+                                    4.8(715) · 도산공원 · 일식
                                 </p>
                             </div>
                         </div>
                         <div class="store_box">
                             <p class="store_place">
                                 <span>2</span>
-                                연동4길
+                                종로/중구
                             </p>
                             <div class="store_contents">
                                 <h3>
-                                    소못
+                                    콩두 명동
                                 </h3>
                                 <p>
                                     <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.8(1,269) · 제주 · 돼지고기오마카세
+                                    4.9(66) · 명동 · 한식
                                 </p>
                             </div>
                         </div>
                         <div class="store_box">
                             <p class="store_place">
                                 <span>3</span>
-                                노형동
+                                잠실/송파/강동
                             </p>
                             <div class="store_contents">
                                 <h3>
-                                    센슈어스
+                                    제미
                                 </h3>
                                 <p>
                                     <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.9(63) · 제주 · 이탈리아음식
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 대전 탭 -->
-                    <div class="store" id="tab_4">
-                        <div class="store_box">
-                            <p class="store_place">
-                                <span>1</span>
-                                중구 중앙로
-                            </p>
-                            <div class="store_contents">
-                                <h3>
-                                    플레이트
-                                </h3>
-                                <p>
-                                    <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.8(20) · 대전 · 이탈리아음식
-                                </p>
-                            </div>
-                        </div>
-                        <div class="store_box">
-                            <p class="store_place">
-                                <span>2</span>
-                                서구
-                            </p>
-                            <div class="store_contents">
-                                <h3>
-                                    레인보우
-                                </h3>
-                                <p>
-                                    <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.9(497) · 대전 · 한우오마카세
-                                </p>
-                            </div>
-                        </div>
-                        <div class="store_box">
-                            <p class="store_place">
-                                <span>3</span>
-                                서구
-                            </p>
-                            <div class="store_contents">
-                                <h3>
-                                    스웨이
-                                </h3>
-                                <p>
-                                    <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.9(932) · 대전 · 파스타
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 부산 탭 -->
-                    <div class="store" id="tab_3">
-                        <div class="store_box">
-                            <p class="store_place">
-                                <span>1</span>
-                                해운대
-                            </p>
-                            <div class="store_contents">
-                                <h3>
-                                    산돼지 해운대
-                                </h3>
-                                <p>
-                                    <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.2(60) · 해운대 · 육류, 고기요리
-                                </p>
-                            </div>
-                        </div>
-                        <div class="store_box">
-                            <p class="store_place">
-                                <span>2</span>
-                                광안리
-                            </p>
-                            <div class="store_contents">
-                                <h3>
-                                    비쇼쿠
-                                </h3>
-                                <p>
-                                    <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.8(922) · 광안리 · 소고기구이
-                                </p>
-                            </div>
-                        </div>
-                        <div class="store_box">
-                            <p class="store_place">
-                                <span>3</span>
-                                동래
-                            </p>
-                            <div class="store_contents">
-                                <h3>
-                                    쉐킴
-                                </h3>
-                                <p>
-                                    <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.9(54) · 동래 · 프랑스음식
+                                    4.8(563) · 방이 · 코스요리
                                 </p>
                             </div>
                         </div>
@@ -380,54 +285,154 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 서울 텝 -->
-                    <div class="store active" id="tab_1">
+                    <!-- 부산 탭 -->
+                    <div class="store" id="tab_3">
                         <div class="store_box">
                             <p class="store_place">
                                 <span>1</span>
-                                강남
+                                해운대
                             </p>
                             <div class="store_contents">
                                 <h3>
-                                    아루
+                                    산돼지 해운대
                                 </h3>
                                 <p>
                                     <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.8(715) · 도산공원 · 일식
+                                    4.2(60) · 해운대 · 육류, 고기요리
                                 </p>
                             </div>
                         </div>
                         <div class="store_box">
                             <p class="store_place">
                                 <span>2</span>
-                                종로/중구
+                                광안리
                             </p>
                             <div class="store_contents">
                                 <h3>
-                                    콩두 명동
+                                    비쇼쿠
                                 </h3>
                                 <p>
                                     <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.9(66) · 명동 · 한식
+                                    4.8(922) · 광안리 · 소고기구이
                                 </p>
                             </div>
                         </div>
                         <div class="store_box">
                             <p class="store_place">
                                 <span>3</span>
-                                잠실/송파/강동
+                                동래
                             </p>
                             <div class="store_contents">
                                 <h3>
-                                    제미
+                                    쉐킴
                                 </h3>
                                 <p>
                                     <span><img src="./img/icon_star.png" alt="star"></span>
-                                    4.8(563) · 방이 · 코스요리
+                                    4.9(54) · 동래 · 프랑스음식
                                 </p>
                             </div>
                         </div>
                     </div>
+                    <!-- 대전 탭 -->
+                    <div class="store" id="tab_4">
+                        <div class="store_box">
+                            <p class="store_place">
+                                <span>1</span>
+                                중구 중앙로
+                            </p>
+                            <div class="store_contents">
+                                <h3>
+                                    플레이트
+                                </h3>
+                                <p>
+                                    <span><img src="./img/icon_star.png" alt="star"></span>
+                                    4.8(20) · 대전 · 이탈리아음식
+                                </p>
+                            </div>
+                        </div>
+                        <div class="store_box">
+                            <p class="store_place">
+                                <span>2</span>
+                                서구
+                            </p>
+                            <div class="store_contents">
+                                <h3>
+                                    레인보우
+                                </h3>
+                                <p>
+                                    <span><img src="./img/icon_star.png" alt="star"></span>
+                                    4.9(497) · 대전 · 한우오마카세
+                                </p>
+                            </div>
+                        </div>
+                        <div class="store_box">
+                            <p class="store_place">
+                                <span>3</span>
+                                서구
+                            </p>
+                            <div class="store_contents">
+                                <h3>
+                                    스웨이
+                                </h3>
+                                <p>
+                                    <span><img src="./img/icon_star.png" alt="star"></span>
+                                    4.9(932) · 대전 · 파스타
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 제주 -->
+                    <div class="store" id="tab_5">
+                        <div class="store_box">
+                            <p class="store_place">
+                                <span>1</span>
+                                한립읍
+                            </p>
+                            <div class="store_contents">
+                                <h3>
+                                    종문
+                                </h3>
+                                <p>
+                                    <span><img src="./img/icon_star.png" alt="star"></span>
+                                    4.9(406) · 제주 · 이자카야
+                                </p>
+                            </div>
+                        </div>
+                        <div class="store_box">
+                            <p class="store_place">
+                                <span>2</span>
+                                연동4길
+                            </p>
+                            <div class="store_contents">
+                                <h3>
+                                    소못
+                                </h3>
+                                <p>
+                                    <span><img src="./img/icon_star.png" alt="star"></span>
+                                    4.8(1,269) · 제주 · 돼지고기오마카세
+                                </p>
+                            </div>
+                        </div>
+                        <div class="store_box">
+                            <p class="store_place">
+                                <span>3</span>
+                                노형동
+                            </p>
+                            <div class="store_contents">
+                                <h3>
+                                    센슈어스
+                                </h3>
+                                <p>
+                                    <span><img src="./img/icon_star.png" alt="star"></span>
+                                    4.9(63) · 제주 · 이탈리아음식
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
 
                 </div>
             </div>
@@ -442,11 +447,11 @@
             </h2>
             <p>
                 상황, 메뉴, 가격까지 <br>
-                캐치테이블은 일정에 딱 맞는 맛집을
+                캐치테이블은 일정에 딱 맞는 맛집을 추천합니다.
             </p>
         </div>
-        <button class="carousel_button left"><img src="" alt=""></button>
-        <button class="carousel_button right">&#10095;</button>
+        <button class="carousel_button left"><img src="./img/icon_prev_color.png" alt="#"></button>
+        <button class="carousel_button right"><img src="./img/icon_next_color.png" alt="#"></button>
         <div class="carousel_container">
 
             <!-- 왼쪽 버튼: 이전 슬라이드 -->

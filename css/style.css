@@ -178,6 +178,30 @@ header>p {
     right: 10px;
 }
 
+/* 메인 닷 */
+
+.slideDots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 999px;
+}
+
+.slideDot{
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slideDot.active {
+    background: #FF3D00;
+}
+
 /* 닷 네비게이션 */
 .dots {
     position: absolute;
@@ -323,18 +347,14 @@ header>p {
     list-style: none;
     height: 35px;
     font-size: 32px;
-    padding: 40px 0px;
+    padding: 50px 0px;
     text-align: center;
     line-height: 35px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
-.tab > a {
-    color: #000;
-    text-decoration: none;
-}
-
-.tab > a:hover {
+.tab:hover {
     color: #FF3D00;
     border-bottom: solid 1px #FF3D00;
 }
@@ -378,16 +398,77 @@ header>p {
     position: relative;
 }
 
-.store_box:nth-child(1){
+.store_box:hover{
+    cursor: pointer;
+
+}
+/* 서울 */
+.store:nth-child(1) > .store_box:nth-child(1){
     background-image: url(../img/sec02_아루.png);
 }
 
-.store_box:nth-child(2){
+.store:nth-child(1) > .store_box:nth-child(2){
     background-image: url(../img/sec02_콩두명동.png);
 }
 
-.store_box:nth-child(3){
+.store:nth-child(1) > .store_box:nth-child(3){
     background-image: url(../img/sec02_제미.png);
+}
+
+/* 인천 */
+
+.store:nth-child(2) > .store_box:nth-child(1){
+    background-image: url(../img/sec02_인천_한정원.png);
+}
+
+.store:nth-child(2) > .store_box:nth-child(2){
+    background-image: url(../img/sec02_인천_소하다이닝바.png);
+}
+
+.store:nth-child(2) > .store_box:nth-child(3){
+    background-image: url(../img/sec02_인천_마타렐로.png);
+}
+
+/* 부산 */
+
+.store:nth-child(3) > .store_box:nth-child(1){
+    background-image: url(../img/sec02_부산_산돼지해운대.png);
+}
+
+.store:nth-child(3) > .store_box:nth-child(2){
+    background-image: url(../img/sec02_부산_비쇼쿠.png);
+}
+
+.store:nth-child(3) > .store_box:nth-child(3){
+    background-image: url(../img/sec02_부산_쉐킴.png);
+}
+
+/* 대전 */
+
+.store:nth-child(4) > .store_box:nth-child(1){
+    background-image: url(../img/sec02_대전_플레이트.png);
+}
+
+.store:nth-child(4) > .store_box:nth-child(2){
+    background-image: url(../img/sec02_대전_레인보우.png);
+}
+
+.store:nth-child(4) > .store_box:nth-child(3){
+    background-image: url(../img/sec02_대전_스웨이.png);
+}
+
+/* 제주 */
+
+.store:nth-child(5) > .store_box:nth-child(1){
+    background-image: url(../img/sec02_제주_종문.png);
+}
+
+.store:nth-child(5) > .store_box:nth-child(2){
+    background-image: url(../img/sec02_제주_소못.png);
+}
+
+.store:nth-child(5) > .store_box:nth-child(3){
+    background-image: url(../img/sec02_제주_센슈어스.png);
 }
 
 .store_place {
@@ -516,9 +597,7 @@ header>p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
     border: none;
-    color: #fff;
     font-size: 2em;
     cursor: pointer;
     padding: 10px;
@@ -548,7 +627,7 @@ header>p {
     background: #ddd;
     margin: 0 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 .dot.active {
@@ -718,4 +797,22 @@ footer {
 
 .footer_text > ul > li > span:last-child {
     color: #000;
+}
+
+/* 스크롤바 */
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FF3D00;
+    border-radius: 10px;
 }
