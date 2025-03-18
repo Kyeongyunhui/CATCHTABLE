@@ -5,25 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>반응형 전체 화면 슬라이드</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            overflow: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow: hidden; }
 
         .slider-container {
             position: relative;
             width: 100vw;
             height: 100vh;
+            overflow: hidden;
         }
 
         .slides {
             display: flex;
-            width: 600%; /* 복사된 첫 번째 이미지 포함 */
+            width: 500%; /* 첫 번째 슬라이드 복사 포함 */
             height: 100%;
             transition: transform 0.5s ease-in-out;
         }
@@ -40,7 +34,6 @@
             object-fit: cover;
         }
 
-        /* 이전/다음 버튼 */
         .prev, .next {
             position: absolute;
             top: 50%;
@@ -57,7 +50,6 @@
         .prev { left: 10px; }
         .next { right: 10px; }
 
-        /* 닷 네비게이션 */
         .dots {
             position: absolute;
             bottom: 20px;
@@ -75,35 +67,20 @@
             cursor: pointer;
         }
 
-        .dot.active {
-            background: white;
-        }
-
-        .slides > li > img {
-    width: 100vw;
-}
+        .dot.active { background: white; }
     </style>
 </head>
 <body>
 
 <div class="slider-container">
     <ul class="slides">
-        <li>
-            <img src="/img/main_img1.png" alt="메인이미지1">
-        </li>
-        <li>
-            <img src="/img/main_img2.png" alt="메인이미지2">
-        </li>
-        <li>
-            <img src="/img/main_img3.png" alt="메인이미지3">
-        </li>
+        <li class="slide"><img src="/img/main_img1.png" alt="메인이미지1"></li>
+        <li class="slide"><img src="/img/main_img2.png" alt="메인이미지2"></li>
+        <li class="slide"><img src="/img/main_img3.png" alt="메인이미지3"></li>
+        <li class="slide"><img src="/img/main_img1.png" alt="메인이미지1 복제"></li>
     </ul>
-
-    <!-- 이전/다음 버튼 -->
     <button class="prev">◀</button>
     <button class="next">▶</button>
-
-    <!-- 닷 네비게이션 -->
     <div class="dots">
         <span class="dot active"></span>
         <span class="dot"></span>
@@ -117,14 +94,13 @@
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
     let currentIndex = 0;
-    const totalSlides = 3; // 실제 슬라이드 개수 (복사된 6번째 슬라이드는 제외)
+    const totalSlides = 3;
     let interval;
 
-    function updateSlide(index) {
-        slides.style.transition = 'transform 0.5s ease-in-out';
+    function updateSlide(index, smooth = true) {
+        slides.style.transition = smooth ? 'transform 0.5s ease-in-out' : 'none';
         slides.style.transform = `translateX(-${index * 100}vw)`;
-
-        // 닷 업데이트
+        
         dots.forEach(dot => dot.classList.remove('active'));
         dots[index % totalSlides].classList.add('active');
     }
@@ -132,24 +108,21 @@
     function nextSlide() {
         currentIndex++;
         updateSlide(currentIndex);
-
+        
         if (currentIndex === totalSlides) {
             setTimeout(() => {
-                slides.style.transition = 'none';
                 currentIndex = 0;
-                slides.style.transform = `translateX(0vw)`;
+                updateSlide(currentIndex, false);
             }, 500);
         }
     }
 
     function prevSlide() {
         if (currentIndex === 0) {
-            slides.style.transition = 'none';
             currentIndex = totalSlides;
-            slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
-
+            updateSlide(currentIndex, false);
+            
             setTimeout(() => {
-                slides.style.transition = 'transform 0.5s ease-in-out';
                 currentIndex--;
                 updateSlide(currentIndex);
             }, 10);
