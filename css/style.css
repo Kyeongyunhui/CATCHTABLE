@@ -89,6 +89,7 @@ header.hide {
     padding-right: 16px;
 }
 
+
 .menu>ul>li>a {
     text-decoration: none;
     color: #fff;
@@ -113,6 +114,10 @@ header.hide {
 .icon_box>ul>li {
     padding-right: 16px;
     margin-top: 10px;
+}
+
+.icon_box > ul > li:nth-child(3) {
+    display: none;
 }
 
 /* 메인 슬라이드 */
@@ -275,6 +280,7 @@ header.hide {
 
 .img_box > img {
     position: absolute;
+    z-index: 99;
 }
 
 .img_box > img:hover{
@@ -849,23 +855,3 @@ footer {
 }
 
 
-/* 테블릿 뷰 */
-
-
-@media (max-width: 1024px) {
-    .menu>ul {
-        display: none;
-    }
-
-    .logo {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-    .icon_box {
-        position: absolute;
-        right: 0px;
-
-    }
-}
