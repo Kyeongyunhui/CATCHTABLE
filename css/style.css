@@ -109,11 +109,11 @@ header.hide {
     display: flex;
     width: 457px;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .icon_box>ul>li {
     padding-right: 16px;
-    margin-top: 10px;
 }
 
 .icon_box > ul > li:nth-child(3) {

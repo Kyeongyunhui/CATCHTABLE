@@ -3,7 +3,7 @@
 
     .nearby_sec>.title {
         text-align: center;
-        width: 1200px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -45,6 +45,8 @@
         font-size: 26px;
     }
 
+    /* 캐러셀 */
+
     .img_box>img {
         scale: 0.8;
     }
@@ -81,6 +83,13 @@
         scale: 0.6;
     }
 
+    .footer_text {
+        width: 100%;
+    }
+
+    .footer_text>h2 {
+        padding-left: 28px;
+    }
 }
 
 @media (max-width: 1430px) {
@@ -90,19 +99,83 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width:1300px) {
+    .menu>ul {
+        display: none;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    .icon_box>ul {
+        width: 100%;
+        right: 0;
+        position: absolute;
+    }
+
+    .icon_box>ul>li {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon_box>ul>li:nth-child(3) {
+        display: block;
+    }
+
+    /* 매거진 */
+
+
+    #MAGAZINE_SEC {
+        height: 980px;
+        padding: 100px 0;
+
+    }
+
+    .magazine_warpper {
+        width: 900px;
+    }
+
 
     .magazine_box {
         margin-top: 40px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(380px, auto);
+        grid-auto-rows: minmax(180px, auto);
         grid-gap: 14px;
         grid-template-areas:
             'a b c'
-            'a b e'
-            'd d e'
+            'a b c'
+            'd e e'
+            'd e e'
     }
+
+    .imgc {
+        background-image: url(../img/sec04_3_1.png);
+    }
+
+    .imgd {
+        background-image: url(../img/sec04_4_1.png);
+    }
+
+    .magazine>h3 {
+        font-size: 20px;
+    }
+
+    .magazine>p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+
 
     .footer_text>ul>li {
         font-size: 9px;
@@ -112,71 +185,122 @@
 
 
 @media (max-width: 1024px) {
-    .menu>ul {
-        display: none;
-    }
-
-    .logo {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-
-    .icon_box {
-        position: absolute;
-        right: 0px;
-
-    }
-
-    .icon_box>ul>li:nth-child(3) {
-        display: block;
-    }
 
     .img_box>img {
         scale: 0.7;
     }
 
+    .advertising_text>h2 {
+        font-size: 36px;
+    }
 
+}
 
+@media (max-width:960px) {
 
+    /* 소개 */
 
-    /* .nearby_sec > .title {
-        text-align: center;
-        width: 1200px;
-        margin: 0 auto;
-    } */
+    .sec1_bg {
+        scale: 0.8;
+        left: 40%;
+    }
 
-    /* .tab_div{
-        height: 680px;
+    .img_box>img {
+        scale: 0.6;
+    }
+
+    /* 탭 */
+
+    .tab_div {
+        height: 700px;
         display: block;
     }
 
-    .tab_div > ul {
+    .tab_div>ul {
         display: flex;
-    } */
-
-    /* .sec2_imgbox {
-        width: 914px;
-        height: 582px;
-        position: relative;
-    
-    }
-
-    .store_box {
-        width: 200px;
-        height: 350px;
-        margin: 0;
-    }
-
-    .store {
         justify-content: center;
-        width: 760px;
-        height: 490px;
+        margin-bottom: 20px;
     }
 
     .sec2_imgbox {
-        margin: 0 auto;
+        width: 680px;
+        height: 582px;
+        position: relative;
+
     }
-     */
+
+    .store {
+        width: 540px;
+    }
+
+    .store_contents>h3 {
+        font-size: 24px;
+    }
+
+    .store_contents>p {
+        font-size: 12px;
+    }
+
+    .carousel_container {
+        width: 564px;
+    }
+
+    /* 매거진 */
+
+    .magazine_box {
+        grid-auto-rows: minmax(170px, auto);
+
+    }
+
+    .magazine_warpper {
+        width: 720px;
+    }
+
+    .magazine>h3 {
+        font-size: 18px;
+    }
+
+    .magazine>p {
+        font-size: 14px;
+    }
+
+    .imgc {
+        background-image: url(../img/sec04_3_2.png);
+    }
+
+    .imgd {
+        background-image: url(../img/sec04_4_2.png);
+    }
+
+}
+
+
+@media (max-width:764px) {
+
+    /* 소개 */
+
+    .sec1_bg{
+        background-image: url(../img/sec1_bg.png);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        scale: 0.7;
+        transform: translate(-70%,-20%);
+        /* background-size: cover; */
+    }
+
+    .img_box {
+        display: none;
+    }
+
+
+    /* 탭 */
+
+    .store {
+
+        gap: 16px;
+        padding: 0 50px 0 50px;
+    }
+
+
 }
