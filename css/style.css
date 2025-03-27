@@ -334,7 +334,7 @@ header.hide {
     width: 902px;
     height: 450px;
     position: absolute;
-    bottom: 0;
+    bottom: -5.5%;
     left: 50%;
     transform: translateX(-50%);
     /* background-size: cover; */

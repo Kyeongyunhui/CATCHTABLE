@@ -245,6 +245,7 @@
         width: 564px;
     }
 
+
     /* 매거진 */
 
     .magazine_box {
@@ -265,12 +266,18 @@
     }
 
     .imgc {
-        background-image: url(../img/sec04_3_2.png);
+        background-image: url(../img/sec04_3_1.png);
     }
 
     .imgd {
         background-image: url(../img/sec04_4_2.png);
+
     }
+
+    .store_place {
+        font-size: 18px;
+    }
+
 
 }
 
@@ -279,14 +286,32 @@
 
     /* 소개 */
 
-    .sec1_bg{
+    .main_text>h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .footer_text>h2 {
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+    .sec1_bg {
         background-image: url(../img/sec1_bg.png);
         position: absolute;
         bottom: 0;
         left: 50%;
         scale: 0.7;
-        transform: translate(-70%,-20%);
+        transform: translate(-70%, -20%);
         /* background-size: cover; */
+    }
+
+    .icon_box>ul>li:nth-child(1) {
+        display: none;
+    }
+
+    .icon_box>ul>li:nth-child(2) {
+        display: none;
     }
 
     .img_box {
@@ -298,9 +323,206 @@
 
     .store {
 
-        gap: 16px;
+        gap: 14px;
         padding: 0 50px 0 50px;
     }
 
+    .tab {
+        font-size: 20px;
+    }
 
+    .store_place {
+        font-size: 18px;
+    }
+
+    .store_contents>h3 {
+        font-size: 20px;
+    }
+
+    .magazine_warpper {
+        width: 640px;
+    }
+
+    .sec1_bg {
+        background-image: url(../img/sec1_bg.png);
+        width: 902px;
+        height: 450px;
+        position: absolute;
+        bottom: -11%;
+        left: 30%;
+        transform: translateX(-50%);
+        /* background-size: cover; */
+    }
+
+
+    #INTRODUCE_BOX {
+        width: 100%;
+        height: 600px;
+        position: relative;
+    }
+
+
+}
+
+@media (max-width:700px) {
+    .magazine_warpper {
+        width: 500px;
+    }
+
+    .sec2_imgbox {
+        width: 600px;
+        height: 582px;
+        position: relative;
+
+    }
+
+
+    .store {
+
+        gap: 14px;
+        padding: 0 20px 0 20px;
+    }
+
+    .magazine {
+        padding: 24px;
+    }
+
+    .magazine>h3 {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .magazine>p {
+        font-size: 14px;
+    }
+
+    .magazine>figure {
+        scale: 0.7;
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .imga {
+        background-image: url(../img/sec04_1_2.png);
+    }
+
+    .imgb {
+        background-image: url(../img/sec04_2_2.png);
+
+    }
+
+    .imgc {
+        background-image: url(../img/sec04_3_2.png);
+    }
+
+    .imgd {
+        background-image: url(../img/sec04_4_3.png);
+
+    }
+
+
+    .store {
+
+        gap: 10px;
+        padding: 0 20px 0 20px;
+    }
+
+    /* 소개 */
+
+    .sec1_bg {
+        background-image: url(../img/sec1_bg.png);
+        width: 902px;
+        height: 450px;
+        position: absolute;
+        bottom: -14%;
+        left: 20%;
+        scale: 0.6;
+        transform: translateX(-50%);
+        /* background-size: cover; */
+    }
+
+
+    #INTRODUCE_BOX {
+        width: 100%;
+        height: 600px;
+        position: relative;
+    }
+}
+
+
+@media (max-width:620px) {
+
+    .store.active {
+        display: block;
+    }
+
+
+    #NEARBY_RESTAURANT {
+        width: 100%;
+        height: 1760px;
+        background-color: #fafafa;
+
+    }
+
+    .sec2_imgbox {
+        width: 380px;
+        height: 2000px;
+        position: relative;
+
+    }
+
+    .store {
+        width: 230px;
+        height: 1320px;
+        background-color: #eaeaea;
+        display: flex;
+        align-items: center;
+        border-radius: 0 0 40px 40px;
+        padding: 0 64px 0 60px;
+        border-top: 14px solid #FF3D00;
+        border-right: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+
+    .store_box {
+        margin: 30px 0;
+
+    }
+
+
+    .carousel_container {
+        width: 280px;
+    }
+
+    .magazine_warpper {
+        width: 360px;
+    }
+
+
+    .magazine_box {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(180px, auto);
+        grid-gap: 14px;
+        grid-template-areas:
+            'a b'
+            'c d'
+            'e e'
+    }
+
+    .footer_text {
+        width: 360px;
+        margin: 0 auto;
+        padding-top: 10px;
+        display: block;
+    }
+
+    .footer_text>h2{
+        padding: 40px 0px 20px 0px;
+    }
+  
 }
