@@ -1,0 +1,661 @@
+/* 테블릿 뷰 */
+@media (max-width: 1650px) {
+
+    .nearby_sec>.title {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .tab_div {
+        height: 680px;
+        display: block;
+    }
+
+    .tab_div>ul {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .sec2_imgbox {
+        width: 914px;
+        height: 582px;
+        position: relative;
+
+    }
+
+    .store_box {
+        width: 200px;
+        height: 350px;
+        margin: 0;
+    }
+
+    .store {
+        justify-content: center;
+        width: 760px;
+        height: 490px;
+    }
+
+    .sec2_imgbox {
+        margin: 0 auto;
+    }
+
+    .store_place {
+        font-size: 26px;
+    }
+
+    /* 캐러셀 */
+
+    .img_box>img {
+        scale: 0.8;
+    }
+
+    .img_box>img:nth-child(1) {
+        top: 10%;
+        left: 6%;
+    }
+
+    .img_box>img:nth-child(2) {
+        top: 22%;
+        left: 16%;
+    }
+
+    .img_box>img:nth-child(3) {
+        top: 30%;
+        left: -10%;
+        scale: 0.6;
+    }
+
+    .img_box>img:nth-child(4) {
+        top: 10%;
+        right: 6%;
+    }
+
+    .img_box>img:nth-child(5) {
+        top: 22%;
+        right: 12%;
+    }
+
+    .img_box>img:nth-child(6) {
+        top: 40%;
+        right: 0%;
+        scale: 0.6;
+    }
+
+    .footer_text {
+        width: 100%;
+    }
+
+    .footer_text>h2 {
+        padding-left: 28px;
+    }
+}
+
+@media (max-width: 1430px) {
+
+    .carousel_container {
+        width: 855px;
+    }
+}
+
+@media (max-width:1300px) {
+    .menu>ul {
+        display: none;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    .icon_box>ul {
+        width: 100%;
+        right: 0;
+        position: absolute;
+    }
+
+    .icon_box>ul>li {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon_box>ul>li:nth-child(3) {
+        display: block;
+    }
+
+    /* 매거진 */
+
+
+    #MAGAZINE_SEC {
+        height: 980px;
+        padding: 100px 0;
+
+    }
+
+    .magazine_warpper {
+        width: 900px;
+    }
+
+
+    .magazine_box {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(180px, auto);
+        grid-gap: 14px;
+        grid-template-areas:
+            'a b c'
+            'a b c'
+            'd e e'
+            'd e e'
+    }
+
+    .imgc {
+        background-image: url(../img/sec04_3_1.png);
+    }
+
+    .imgd {
+        background-image: url(../img/sec04_4_1.png);
+    }
+
+    .magazine>h3 {
+        font-size: 20px;
+    }
+
+    .magazine>p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+
+    .footer_text>ul>li {
+        font-size: 9px;
+    }
+
+}
+
+
+@media (max-width: 1024px) {
+
+    .img_box>img {
+        scale: 0.7;
+    }
+
+    .advertising_text>h2 {
+        font-size: 36px;
+    }
+
+}
+
+@media (max-width:960px) {
+
+    /* 소개 */
+
+    .sec1_bg {
+        scale: 0.8;
+        left: 40%;
+    }
+
+    .img_box>img {
+        scale: 0.6;
+    }
+
+    /* 탭 */
+
+    .tab_div {
+        height: 700px;
+        display: block;
+    }
+
+    .tab_div>ul {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .sec2_imgbox {
+        width: 680px;
+        height: 582px;
+        position: relative;
+
+    }
+
+    .store {
+        width: 540px;
+    }
+
+    .store_contents>h3 {
+        font-size: 24px;
+    }
+
+    .store_contents>p {
+        font-size: 12px;
+    }
+
+    .carousel_container {
+        width: 564px;
+    }
+
+
+    /* 매거진 */
+
+    .magazine_box {
+        grid-auto-rows: minmax(170px, auto);
+
+    }
+
+    .magazine_warpper {
+        width: 720px;
+    }
+
+    .magazine>h3 {
+        font-size: 18px;
+    }
+
+    .magazine>p {
+        font-size: 14px;
+    }
+
+    .imgc {
+        background-image: url(../img/sec04_3_1.png);
+    }
+
+    .imgd {
+        background-image: url(../img/sec04_4_2.png);
+
+    }
+
+    .store_place {
+        font-size: 18px;
+    }
+
+
+}
+
+
+@media (max-width:764px) {
+
+    /* 소개 */
+
+    .main_text>h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .footer_text>h2 {
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+    .sec1_bg {
+        background-image: url(../img/sec1_bg.png);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        scale: 0.7;
+        transform: translate(-70%, -20%);
+        /* background-size: cover; */
+    }
+
+    .icon_box>ul>li:nth-child(1) {
+        display: none;
+    }
+
+    .icon_box>ul>li:nth-child(2) {
+        display: none;
+    }
+
+    .img_box {
+        display: none;
+    }
+
+
+    /* 탭 */
+
+    .store {
+
+        gap: 14px;
+        padding: 0 50px 0 50px;
+    }
+
+    .tab {
+        font-size: 20px;
+    }
+
+    .store_place {
+        font-size: 18px;
+    }
+
+    .store_contents>h3 {
+        font-size: 20px;
+    }
+
+    .magazine_warpper {
+        width: 640px;
+    }
+
+    .sec1_bg {
+        background-image: url(../img/sec1_bg.png);
+        width: 902px;
+        height: 450px;
+        position: absolute;
+        bottom: -11%;
+        left: 30%;
+        transform: translateX(-50%);
+        /* background-size: cover; */
+    }
+
+
+    #INTRODUCE_BOX {
+        width: 100%;
+        height: 600px;
+        position: relative;
+    }
+
+
+}
+
+@media (max-width:700px) {
+    .magazine_warpper {
+        width: 500px;
+    }
+
+    .sec2_imgbox {
+        width: 600px;
+        height: 582px;
+        position: relative;
+
+    }
+
+
+    .store {
+
+        gap: 14px;
+        padding: 0 20px 0 20px;
+    }
+
+    .magazine {
+        padding: 24px;
+    }
+
+    .magazine>h3 {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .magazine>p {
+        font-size: 14px;
+    }
+
+    .magazine>figure {
+        scale: 0.7;
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .imga {
+        background-image: url(../img/sec04_1_2.png);
+    }
+
+    .imgb {
+        background-image: url(../img/sec04_2_2.png);
+
+    }
+
+    .imgc {
+        background-image: url(../img/sec04_3_2.png);
+    }
+
+    .imgd {
+        background-image: url(../img/sec04_4_3.png);
+
+    }
+
+
+    .store {
+
+        gap: 10px;
+        padding: 0 20px 0 20px;
+    }
+
+    /* 소개 */
+
+    .sec1_bg {
+        background-image: url(../img/sec1_bg.png);
+        width: 902px;
+        height: 450px;
+        position: absolute;
+        bottom: -14%;
+        left: 20%;
+        scale: 0.6;
+        transform: translateX(-50%);
+        /* background-size: cover; */
+    }
+
+
+    #INTRODUCE_BOX {
+        width: 100%;
+        height: 600px;
+        position: relative;
+    }
+}
+
+
+@media (max-width:620px) {
+
+    .store.active {
+        display: block;
+    }
+
+
+    #NEARBY_RESTAURANT {
+        width: 100%;
+        height: 1760px;
+        background-color: #fafafa;
+
+    }
+
+    .sec2_imgbox {
+        width: 380px;
+        height: 2000px;
+        position: relative;
+
+    }
+
+    .store {
+        width: 230px;
+        height: 1320px;
+        background-color: #eaeaea;
+        display: flex;
+        align-items: center;
+        border-radius: 0 0 40px 40px;
+        padding: 0 64px 0 60px;
+        border-top: 14px solid #FF3D00;
+        border-right: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+
+    .store_box {
+        margin: 30px 0;
+
+    }
+
+
+    .carousel_container {
+        width: 280px;
+    }
+
+    .magazine_warpper {
+        width: 360px;
+    }
+
+
+    .magazine_box {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(180px, auto);
+        grid-gap: 14px;
+        grid-template-areas:
+            'a b'
+            'c d'
+            'e e'
+    }
+
+    .footer_text {
+        width: 360px;
+        margin: 0 auto;
+        padding-top: 10px;
+        display: block;
+    }
+
+    .footer_text>h2 {
+        padding: 40px 0px 20px 0px;
+    }
+
+}
+
+@media (max-width:576px) {
+
+    #INTRODUCE_BOX {
+        width: 100%;
+        height: 560px;
+    }
+
+    .sec1_bg {
+        width: 902px;
+        height: 450px;
+        position: absolute;
+        bottom: -20%;
+        left: 2%;
+        scale: 0.47;
+        transform: translateX(-50%);
+        /* background-size: cover; */
+    }
+
+    .title>h2 {
+        font-size: 40px;
+    }
+
+    .div_text>h2 {
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width:460px) {
+    header>p {
+        display: none;
+    }
+
+    .mo_p {
+        display: block;
+    }
+
+    .menu {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        line-height: 60px;
+        /* border: solid 1px #FF3D00; */
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: 600;
+        color: #FF3D00;
+        font-family: 'GmarketSansMedium';
+        padding-left: 10px;
+
+    }
+
+    .main_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        z-index: 55;
+        width: 500px;
+    }
+
+    .main_text > h2 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 38px;
+        margin-bottom: 40px;
+    }
+
+    .main_text > p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    
+    .sec1_bg {
+        width: 902px;
+        height: 450px;
+        position: absolute;
+        bottom: -20%;
+        left: -22%;
+        scale: 0.4;
+        transform: translateX(-50%);
+        /* background-size: cover; */
+    }
+
+    .tab_div > ul {
+        margin-right: 20px;
+        padding-left: 20px;
+    }
+    .title > p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .title > h2 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 38px;
+        margin-bottom: 12px;
+    }
+
+    .main_text > p {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .sec2_imgbox {
+        width: 300px;
+        height: 582px;
+        position: relative;
+
+    }
+
+    .store {
+        width: 180px;
+        height: 1160px;
+    }
+
+    .store_box {
+        width: 160px;
+        height: 300px;
+        margin: 0 auto;
+        border-radius: 00px 40px 0px 40px;
+        color: #fff;
+        background-size: cover;
+        position: relative;
+        margin: 20px 0;
+    }
+}

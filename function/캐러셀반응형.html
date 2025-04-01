@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    .carousel_container {
+      overflow: hidden;
+      width: 1425px;
+      margin: auto;
+    }
+    .carousel_track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .recommended_restaurant {
+      flex: 0 0 auto;
+      width: 285px;
+      height: 200px;
+      background: #ccc;
+      margin: 5px;
+      text-align: center;
+      line-height: 200px;
+      font-size: 24px;
+    }
+    .carousel_button {
+      cursor: pointer;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #aaa;
+      margin: 0 5px;
+    }
+    .dot.active {
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel_container">
+    <div class="carousel_track">
+      <!-- JS에서 15개 만들거나 직접 작성 -->
+      <div class="recommended_restaurant">1</div>
+      <div class="recommended_restaurant">2</div>
+      <div class="recommended_restaurant">3</div>
+      <div class="recommended_restaurant">4</div>
+      <div class="recommended_restaurant">5</div>
+      <div class="recommended_restaurant">6</div>
+      <div class="recommended_restaurant">7</div>
+      <div class="recommended_restaurant">8</div>
+      <div class="recommended_restaurant">9</div>
+      <div class="recommended_restaurant">10</div>
+      <div class="recommended_restaurant">11</div>
+      <div class="recommended_restaurant">12</div>
+      <div class="recommended_restaurant">13</div>
+      <div class="recommended_restaurant">14</div>
+      <div class="recommended_restaurant">15</div>
+    </div>
+  </div>
+
+  <button class="carousel_button left">←</button>
+  <button class="carousel_button right">→</button>
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <script src="carousel.js"></script>
+</body>
+</html>
