@@ -581,6 +581,20 @@
 
     }
 
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0);
+        color: white;
+        border: none;
+        transform: scale(60%);
+        cursor: pointer;
+        font-size: 18px;
+        z-index: 10;
+    }
+
     .main_text {
         position: absolute;
         top: 50%;
@@ -592,46 +606,54 @@
         width: 500px;
     }
 
-    .main_text > h2 {
+    .main_text>h2 {
         font-size: 32px;
         font-weight: 600;
         line-height: 38px;
         margin-bottom: 40px;
     }
 
-    .main_text > p {
+    .main_text>p {
         font-size: 16px;
         line-height: 28px;
     }
-    
+
+    #INTRODUCE_BOX {
+        width: 100%;
+        height: 530px;
+    }
+
     .sec1_bg {
         width: 902px;
         height: 450px;
         position: absolute;
-        bottom: -20%;
-        left: -22%;
-        scale: 0.4;
+        bottom: -27%;
+        left: -28.5%;
+        scale: 0.36;
         transform: translateX(-50%);
         /* background-size: cover; */
     }
 
-    .tab_div > ul {
+    
+
+    .tab_div>ul {
         margin-right: 20px;
         padding-left: 20px;
     }
-    .title > p {
+
+    .title>p {
         font-size: 16px;
         line-height: 28px;
     }
 
-    .title > h2 {
+    .title>h2 {
         font-size: 32px;
         font-weight: 600;
         line-height: 38px;
         margin-bottom: 12px;
     }
 
-    .main_text > p {
+    .main_text>p {
         font-size: 14px;
         line-height: 28px;
     }
