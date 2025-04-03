@@ -77,99 +77,122 @@ startAutoSlide();
 
 
 
-const track = document.querySelector('.carousel_track');
-const leftButton = document.querySelector('.carousel_button.left');
-const rightButton = document.querySelector('.carousel_button.right');
-const dots = document.querySelectorAll('.dot');
-const totalImages = 15; // 전체 이미지 수
-const imageWidth = 285;
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".carousel_track");
+    const leftButton = document.querySelector(".carousel_button.left");
+    const rightButton = document.querySelector(".carousel_button.right");
+    const dots = document.querySelectorAll(".dot");
+    const totalImages = 15;
+    const imageWidth = 285;
+    
+    let itemsPerSlide;
+    let slideWidth;
+    let totalActualSlides;
+    let currentSlide = 0;
+    let autoSlideInterval;
 
-let itemsPerSlide = window.innerWidth <= 1024 ? 1 : 5;
-let slideWidth = itemsPerSlide * imageWidth;
-let totalActualSlides = Math.ceil(totalImages / itemsPerSlide);
-let currentSlide = 0;
-let autoSlideInterval;
-
-// 클론 슬라이드 추가 (첫 슬라이드를 복제해서 마지막에 붙임)
-function addClones() {
-    const carouselItems = document.querySelectorAll('.recommended_restaurant');
-    for (let i = 0; i < itemsPerSlide; i++) {
-        const clone = carouselItems[i].cloneNode(true);
-        track.appendChild(clone);
+    function updateItemsPerSlide() {
+        if (window.innerWidth >= 1440) {
+            itemsPerSlide = 5;
+        } else if (window.innerWidth >= 960) {
+            itemsPerSlide = 3;
+        } else if (window.innerWidth >= 640) {
+            itemsPerSlide = 2;
+        } else {
+            itemsPerSlide = 1;
+        }
+        slideWidth = itemsPerSlide * imageWidth;
+        totalActualSlides = Math.ceil(totalImages / itemsPerSlide);
+        track.style.width = `${slideWidth}px`; // 가시 영역 조정
+        track.parentElement.style.overflow = "hidden"; // 넘치는 이미지 숨김
     }
-}
-addClones();
 
-// 오른쪽 버튼
-rightButton.addEventListener('click', () => {
-    currentSlide++;
-    updateCarousel();
-});
+    function addClones() {
+        const carouselItems = document.querySelectorAll(".recommended_restaurant");
+        if (carouselItems.length < itemsPerSlide) return;
 
-// 왼쪽 버튼
-leftButton.addEventListener('click', () => {
-    if (currentSlide === 0) return;
-    currentSlide--;
-    updateCarousel();
-});
+        for (let i = 0; i < itemsPerSlide; i++) {
+            const clone = carouselItems[i].cloneNode(true);
+            track.appendChild(clone);
+        }
+    }
 
-// 닷 클릭
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
+    function updateCarousel(instant = false) {
+        if (instant) {
+            track.style.transition = "none";
+        } else {
+            track.style.transition = "transform 0.5s ease";
+        }
+        track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+
+        let dotIndex = currentSlide % totalActualSlides;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === dotIndex);
+        });
+    }
+
+    rightButton.addEventListener("click", () => {
+        currentSlide++;
         updateCarousel();
     });
-});
 
-// 캐러셀 이동
-function updateCarousel() {
-    track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
-    const dotIndex = (currentSlide === totalActualSlides) ? 0 : currentSlide;
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === dotIndex);
+    leftButton.addEventListener("click", () => {
+        if (currentSlide === 0) return;
+        currentSlide--;
+        updateCarousel();
     });
-}
 
-// 무한 루프
-track.addEventListener('transitionend', () => {
-    if (currentSlide === totalActualSlides) {
-        track.style.transition = 'none';
-        currentSlide = 0;
-        track.style.transform = `translateX(0px)`;
-        void track.offsetWidth; // reflow
-        track.style.transition = 'transform 0.5s ease';
-    }
-});
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            currentSlide = index;
+            updateCarousel();
+        });
+    });
 
+    track.addEventListener("transitionend", () => {
+        if (currentSlide >= totalActualSlides) {
+            currentSlide = 0;
+            updateCarousel(true);
+        }
+    });
 
-
-// 초기 자동 슬라이드 시작
-startAutoSlide();
-
-// 윈도우 리사이즈 대응
-window.addEventListener('resize', () => {
-    stopAutoSlide();
-    itemsPerSlide = window.innerWidth <= 1024 ? 1 : 5;
-    slideWidth = itemsPerSlide * imageWidth;
-    totalActualSlides = Math.ceil(totalImages / itemsPerSlide);
-    startAutoSlide();
-});
-
-// 자동 슬라이드 시작
-function startAutoSlide() {
-    if ( window.innerWidth <= 760 || window.innerWidth <= 1024 ) {
-        
-        setInterval(() => {
+    function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideInterval = setInterval(() => {
             currentSlide++;
             updateCarousel();
         }, 3000);
     }
-}
 
-// 자동 슬라이드 중지
-function stopAutoSlide() {
-    clearInterval();
-}
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+
+    window.addEventListener("resize", () => {
+        stopAutoSlide();
+        updateItemsPerSlide();
+        updateCarousel(true);
+        if (window.innerWidth < 960) {
+            leftButton.style.display = "none";
+            rightButton.style.display = "none";
+            dots.forEach(dot => dot.style.display = "none");
+        } else {
+            leftButton.style.display = "block";
+            rightButton.style.display = "block";
+            dots.forEach(dot => dot.style.display = "block");
+        }
+        startAutoSlide();
+    });
+
+    updateItemsPerSlide();
+    addClones();
+    updateCarousel(true);
+    startAutoSlide();
+});
+
+
 
 
 

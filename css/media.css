@@ -93,10 +93,10 @@
 }
 
 @media (max-width: 1430px) {
-
+/* 
     .carousel_container {
         width: 855px;
-    }
+    } */
 }
 
 @media (max-width:1300px) {
@@ -241,9 +241,9 @@
         font-size: 12px;
     }
 
-    .carousel_container {
+    /* .carousel_container {
         width: 564px;
-    }
+    } */
 
 
     /* 매거진 */
@@ -492,10 +492,10 @@
 
     }
 
-
+/* 
     .carousel_container {
         width: 280px;
-    }
+    } */
 
     .magazine_warpper {
         width: 360px;
@@ -636,6 +636,13 @@
 
     
 
+    #NEARBY_RESTAURANT {
+        width: 100%;
+        height: 1600px;
+        background-color: #fafafa;
+
+    }
+    
     .tab_div>ul {
         margin-right: 20px;
         padding-left: 20px;
@@ -680,4 +687,68 @@
         position: relative;
         margin: 20px 0;
     }
+
+    .div_text > h2 {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 68px;
+        color: #FF3D00;
+        margin-left: 20px;
+    }
+
+    .div_text > p {
+        margin: 20px 0;
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    #MAGAZINE_SEC {
+        height: 720px;
+        padding: 100px 0;
+
+    }
+    .magazine_box {
+        margin: 10px;
+        grid-gap: 8px;
+    }
+
+    .magazine > p {
+        display: none;
+    }
+
+
+    .magazine > h3 {
+        color: #fff;
+        font-size: 18px;
+        line-height: 38px;
+        font-weight: 900;
+        padding-bottom: 10px;
+    }
+
+    #ADVERTISING {
+        height: 120px;
+    }
+
+    .advertising_text {
+        padding-top: 36px;
+    }
+    
+    .advertising_text > h2 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .advertising_text > p {
+        font-size: 12px;
+        padding: 14px;
+    }
+
+    .footer_text > h2 {
+        margin-left: 10px;
+    }
+    .footer_text > ul > li {
+        margin-left: 10px;
+    }
+    
+    
 }
