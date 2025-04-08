@@ -77,120 +77,120 @@ startAutoSlide();
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const track = document.querySelector(".carousel_track");
-    const leftButton = document.querySelector(".carousel_button.left");
-    const rightButton = document.querySelector(".carousel_button.right");
-    const dots = document.querySelectorAll(".dot");
-    const totalImages = 15;
-    const imageWidth = 285;
+// document.addEventListener("DOMContentLoaded", function () {
+//     const track = document.querySelector(".carousel_track");
+//     const leftButton = document.querySelector(".carousel_button.left");
+//     const rightButton = document.querySelector(".carousel_button.right");
+//     const dots = document.querySelectorAll(".dot");
+//     const totalImages = 15;
+//     const imageWidth = 285;
     
-    let itemsPerSlide;
-    let slideWidth;
-    let totalActualSlides;
-    let currentSlide = 0;
-    let autoSlideInterval;
+//     let itemsPerSlide;
+//     let slideWidth;
+//     let totalActualSlides;
+//     let currentSlide = 0;
+//     let autoSlideInterval;
 
-    function updateItemsPerSlide() {
-        if (window.innerWidth >= 1440) {
-            itemsPerSlide = 5;
-        } else if (window.innerWidth >= 960) {
-            itemsPerSlide = 3;
-        } else if (window.innerWidth >= 640) {
-            itemsPerSlide = 2;
-        } else {
-            itemsPerSlide = 1;
-        }
-        slideWidth = itemsPerSlide * imageWidth;
-        totalActualSlides = Math.ceil(totalImages / itemsPerSlide);
-        track.style.width = `${slideWidth}px`; // 가시 영역 조정
-        track.parentElement.style.overflow = "hidden"; // 넘치는 이미지 숨김
-    }
+//     function updateItemsPerSlide() {
+//         if (window.innerWidth >= 1440) {
+//             itemsPerSlide = 5;
+//         } else if (window.innerWidth >= 960) {
+//             itemsPerSlide = 3;
+//         } else if (window.innerWidth >= 640) {
+//             itemsPerSlide = 2;
+//         } else {
+//             itemsPerSlide = 1;
+//         }
+//         slideWidth = itemsPerSlide * imageWidth;
+//         totalActualSlides = Math.ceil(totalImages / itemsPerSlide);
+//         track.style.width = `${slideWidth}px`; // 가시 영역 조정
+//         track.parentElement.style.overflow = "hidden"; // 넘치는 이미지 숨김
+//     }
 
-    function addClones() {
-        const carouselItems = document.querySelectorAll(".recommended_restaurant");
-        if (carouselItems.length < itemsPerSlide) return;
+//     function addClones() {
+//         const carouselItems = document.querySelectorAll(".recommended_restaurant");
+//         if (carouselItems.length < itemsPerSlide) return;
 
-        for (let i = 0; i < itemsPerSlide; i++) {
-            const clone = carouselItems[i].cloneNode(true);
-            track.appendChild(clone);
-        }
-    }
+//         for (let i = 0; i < itemsPerSlide; i++) {
+//             const clone = carouselItems[i].cloneNode(true);
+//             track.appendChild(clone);
+//         }
+//     }
 
-    function updateCarousel(instant = false) {
-        if (instant) {
-            track.style.transition = "none";
-        } else {
-            track.style.transition = "transform 0.5s ease";
-        }
-        track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+//     function updateCarousel(instant = false) {
+//         if (instant) {
+//             track.style.transition = "none";
+//         } else {
+//             track.style.transition = "transform 0.5s ease";
+//         }
+//         track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
 
-        let dotIndex = currentSlide % totalActualSlides;
-        dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === dotIndex);
-        });
-    }
+//         let dotIndex = currentSlide % totalActualSlides;
+//         dots.forEach((dot, index) => {
+//             dot.classList.toggle("active", index === dotIndex);
+//         });
+//     }
 
-    rightButton.addEventListener("click", () => {
-        currentSlide++;
-        updateCarousel();
-    });
+//     rightButton.addEventListener("click", () => {
+//         currentSlide++;
+//         updateCarousel();
+//     });
 
-    leftButton.addEventListener("click", () => {
-        if (currentSlide === 0) return;
-        currentSlide--;
-        updateCarousel();
-    });
+//     leftButton.addEventListener("click", () => {
+//         if (currentSlide === 0) return;
+//         currentSlide--;
+//         updateCarousel();
+//     });
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            currentSlide = index;
-            updateCarousel();
-        });
-    });
+//     dots.forEach((dot, index) => {
+//         dot.addEventListener("click", () => {
+//             currentSlide = index;
+//             updateCarousel();
+//         });
+//     });
 
-    track.addEventListener("transitionend", () => {
-        if (currentSlide >= totalActualSlides) {
-            currentSlide = 0;
-            updateCarousel(true);
-        }
-    });
+//     track.addEventListener("transitionend", () => {
+//         if (currentSlide >= totalActualSlides) {
+//             currentSlide = 0;
+//             updateCarousel(true);
+//         }
+//     });
 
-    function startAutoSlide() {
-        stopAutoSlide();
-        autoSlideInterval = setInterval(() => {
-            currentSlide++;
-            updateCarousel();
-        }, 3000);
-    }
+//     function startAutoSlide() {
+//         stopAutoSlide();
+//         autoSlideInterval = setInterval(() => {
+//             currentSlide++;
+//             updateCarousel();
+//         }, 3000);
+//     }
 
-    function stopAutoSlide() {
-        if (autoSlideInterval) {
-            clearInterval(autoSlideInterval);
-        }
-    }
+//     function stopAutoSlide() {
+//         if (autoSlideInterval) {
+//             clearInterval(autoSlideInterval);
+//         }
+//     }
 
-    window.addEventListener("resize", () => {
-        stopAutoSlide();
-        updateItemsPerSlide();
-        updateCarousel(true);
-        if (window.innerWidth < 960) {
-            leftButton.style.display = "none";
-            rightButton.style.display = "none";
-            dots.forEach(dot => dot.style.display = "none");
-        } else {
-            leftButton.style.display = "block";
-            rightButton.style.display = "block";
-            dots.forEach(dot => dot.style.display = "block");
-        }
-        startAutoSlide();
-    });
+//     window.addEventListener("resize", () => {
+//         stopAutoSlide();
+//         updateItemsPerSlide();
+//         updateCarousel(true);
+//         if (window.innerWidth < 960) {
+//             leftButton.style.display = "none";
+//             rightButton.style.display = "none";
+//             dots.forEach(dot => dot.style.display = "none");
+//         } else {
+//             leftButton.style.display = "block";
+//             rightButton.style.display = "block";
+//             dots.forEach(dot => dot.style.display = "block");
+//         }
+//         startAutoSlide();
+//     });
 
-    updateItemsPerSlide();
-    addClones();
-    updateCarousel(true);
-    startAutoSlide();
-});
+//     updateItemsPerSlide();
+//     addClones();
+//     updateCarousel(true);
+//     startAutoSlide();
+// });
 
 
 

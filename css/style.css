@@ -36,6 +36,44 @@ body {
     height: 24px;
 }
 
+/* 테블릿 서브 메뉴 */
+
+.tablet_menu {
+    /* display: none; */
+    right: 0px;
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    background-color: #d43200;
+}
+
+.tablet_menu ul li {
+    display: block;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+
+}
+
+.tablet_menu ul li:hover a{
+    background-color: #fff;
+    color: #FF3D00;
+    transition: 0.3s;
+}
+
+.tablet_menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    height: 40px;
+    width: 100%;
+}
+
+
+
+
 
 /* 헤더 */
 
@@ -563,26 +601,24 @@ header.hide {
     height: 529px;
 }
 
-
+/* 
 .carousel_container {
     width: 1425px;
-    /* 285px * 5 */
     height: 529px;
     padding-bottom: 60px;
     overflow: hidden;
     position: relative;
-    /* border: 1px solid #ccc; */
-}
+} */
 
 /* 이미지 트랙: 모든 이미지들을 가로로 나열 */
-.carousel_track {
+/* .carousel_track {
     display: flex;
     transition: transform 0.5s ease;
     margin-top: 20px;
-}
+} */
 
 /* 각 이미지 아이템 */
-.recommended_restaurant {
+/* .recommended_restaurant {
     box-sizing: border-box;
     min-width: 285px;
     height: 529px;
@@ -633,10 +669,11 @@ header.hide {
 .restaurant_main_contents {
     margin-top: 20px;
     line-height: 18px;
-}
+} */
 
-/* 좌우 버튼 */
-.carousel_button {
+
+/* 좌우버튼 */
+/* .carousel_button {
     background-color: rgba(0, 0, 0, 0);
     position: absolute;
     top: 50%;
@@ -655,10 +692,10 @@ header.hide {
 
 .carousel_button.right {
     right: 10px;
-}
+} */
 
 /* 닷 네비게이션 */
-.dots {
+/* .dots {
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -672,7 +709,7 @@ header.hide {
     margin: 0 5px;
     cursor: pointer;
     transition: 0.3s;
-}
+} */
 
 .dot.active {
     background: #FF3D00;

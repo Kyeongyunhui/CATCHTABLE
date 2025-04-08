@@ -1,0 +1,160 @@
+.carousel_container {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    max-width: 1425px;
+    /* 285px × 5개 */
+}
+
+.carousel_track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* 각 이미지 아이템 */
+.recommended_restaurant {
+    box-sizing: border-box;
+    min-width: 285px;
+    height: 529px;
+    flex-shrink: 0;
+    box-shadow: 0px 3px 5px 0px rgba(100, 100, 100, 0.5);
+    ;
+    background-color: #fff;
+    border-radius: 30px;
+    transform: scale(90%);
+}
+
+.recommended_restaurant img {
+    width: 100%;
+    height: 327px;
+    object-fit: cover;
+}
+
+.restaurant_text {
+    margin: 12px;
+}
+
+.restaurant_text>h3 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.restaurant_text>p {
+    display: flex;
+    align-items: center;
+}
+
+.restaurant_sub_contents>span>img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.restaurant_sub_contents>span {
+    font-weight: 800;
+    margin-right: 6px;
+    color: #000;
+}
+
+.restaurant_sub_contents {
+    color: #797979;
+    margin: 6px 0px;
+}
+
+.restaurant_main_contents {
+    margin-top: 20px;
+    line-height: 18px;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.nav.carousel_left {
+    left: 10px;
+}
+
+.nav.carousel_right {
+    right: 10px;
+}
+
+.carousel_dot {
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+.carousel_dot .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel_dot .dot.active {
+    background: #FF3D00;
+
+}
+
+/* 반응형 */
+@media (max-width: 1440px) {
+
+    .carousel_container {
+        position: relative;
+        overflow: hidden;
+        margin: auto;
+        width: 100%;
+        max-width: 860px;
+    }
+
+    .recommended_restaurant {
+        width: calc(100% / 3);
+    }
+}
+
+@media (max-width: 960px) {
+    .carousel_container {
+        position: relative;
+        overflow: hidden;
+        margin: auto;
+        width: 100%;
+        max-width: 570px;
+    }
+
+    .recommended_restaurant {
+        width: 50%;
+    }
+
+    .nav,
+    .carousel_dot {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .carousel_container {
+        position: relative;
+        overflow: hidden;
+        margin: auto;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .recommended_restaurant {
+        width: 100%;
+    }
+}

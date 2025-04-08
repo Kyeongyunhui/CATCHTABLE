@@ -80,29 +80,29 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 2;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0);
             color: white;
-            font-size: 30px;
             border: none;
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
         }
 
-        .nav.prev {
+        .nav.carousel_left {
             left: 10px;
         }
 
-        .nav.next {
+        .nav.carousel_right {
             right: 10px;
         }
 
-        .dots {
+        .carousel_dot {
             text-align: center;
             margin-top: 10px;
         }
 
-        .dots .dot {
+        .carousel_dot .dot {
             display: inline-block;
             width: 12px;
             height: 12px;
@@ -112,33 +112,55 @@
             cursor: pointer;
         }
 
-        .dots .dot.active {
-            background: #333;
+        .carousel_dot .dot.active {
+            background: #FF3D00;
+
         }
 
         /* 반응형 */
         @media (max-width: 1440px) {
+
+            .carousel_container {
+                position: relative;
+                overflow: hidden;
+                margin: auto;
+                width: 100%;
+                max-width: 900px;
+            }
+
             .recommended_restaurant {
                 width: calc(100% / 3);
             }
-
-
-
-
         }
 
         @media (max-width: 960px) {
+            .carousel_container {
+                position: relative;
+                overflow: hidden;
+                margin: auto;
+                width: 100%;
+                max-width: 600px;
+            }
+
             .recommended_restaurant {
                 width: 50%;
             }
 
             .nav,
-            .dots {
+            .carousel_dot {
                 display: none;
             }
         }
 
         @media (max-width: 640px) {
+            .carousel_container {
+                position: relative;
+                overflow: hidden;
+                margin: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+
             .recommended_restaurant {
                 width: 100%;
             }
@@ -485,16 +507,17 @@
                 </div>
             </div>
         </div>
-        <button class="nav prev">&#10094;</button>
-        <button class="nav next">&#10095;</button>
-        <div class="dots"></div>
+        <button class="nav carousel_left"><img src="../img/icon_prev.png" alt="이전"></button>
+        <button class="nav carousel_right"><img src="../img/icon_next.png" alt="다음"></button>
+
+        <div class="carousel_dot"></div>
     </div>
     <script>
         const track = document.querySelector(".carousel_track");
         const slides = Array.from(track.children);
-        const prevBtn = document.querySelector(".nav.prev");
-        const nextBtn = document.querySelector(".nav.next");
-        const dotsContainer = document.querySelector(".dots");
+        const prevBtn = document.querySelector(".nav.carousel_left");
+        const nextBtn = document.querySelector(".nav.carousel_right");
+        const dotsContainer = document.querySelector(".carousel_dot");
 
         let currentIndex = 0;
         let slideCount = slides.length;
