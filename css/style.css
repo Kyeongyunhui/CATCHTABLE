@@ -39,7 +39,7 @@ body {
 /* 테블릿 서브 메뉴 */
 
 .tablet_menu {
-    /* display: none; */
+    display: none;
     right: 0px;
     width: 200px;
     height: 100vh;
