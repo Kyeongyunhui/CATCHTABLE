@@ -218,7 +218,6 @@ tabs.forEach(tab => {
         // tab.dataset : 요소의 모든 data-tab 번호를 가져옴
         // tab.dataset.tab : domString이 아닌 tab속성의 값만 빼오겠다는 뜻
         console.log(store.dataset);
-        console.log(store.dataset.tab);
     });
 });
 
