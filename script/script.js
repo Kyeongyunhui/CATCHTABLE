@@ -1,196 +1,83 @@
-const slides = document.querySelector('.slides');
-const mainDots = document.querySelectorAll('.slideDot');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let currentIndex = 0;
-const totalSlides = 3; // 실제 슬라이드 개수 (복사된 6번째 슬라이드는 제외)
+const slides = document.querySelector(".slides");
+const slideItems = document.querySelectorAll(".slides li");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const dots = document.querySelectorAll(".slideDot");
+
+const realCount = 3;           // 실제 슬라이드 개수
+let index = 0;
 let interval;
 
-function updateSlide(index, smooth = true) {
-    slides.style.transition = smooth ? 'transform 0.5s ease-in-out' : 'none';
-    slides.style.transform = `translateX(-${index * 100}vw)`;
+/* ---------- 위치 이동 ---------- */
+function moveSlide(i, smooth = true) {
+    slides.style.transition = smooth ? "transform 0.6s ease" : "none";
+    slides.style.transform = `translateX(-${i * 100}vw)`;
 
-    // 닷 업데이트
-    mainDots.forEach(slideDots => slideDots.classList.remove('active'));
-    mainDots[index % totalSlides].classList.add('active');
+    // 닷
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[i % realCount].classList.add("active");
 }
 
-function nextSlide() {
-    currentIndex++;
-    updateSlide(currentIndex);
+/* ---------- 다음 ---------- */
+function next() {
+    index++;
+    moveSlide(index);
 
-    if (currentIndex === totalSlides) {
+    if (index === realCount) {
         setTimeout(() => {
-            currentIndex = 0;
-            updateSlide(currentIndex, false);
-        }, 500);
+            index = 0;
+            moveSlide(index, false);
+        }, 600);
     }
 }
 
-function prevSlide() {
-    if (currentIndex === 0) {
-        currentIndex = totalSlides;
-        updateSlide(currentIndex, false);
+/* ---------- 이전 ---------- */
+function prev() {
+    if (index === 0) {
+        index = realCount;
+        moveSlide(index, false);
 
         setTimeout(() => {
-            currentIndex--;
-            updateSlide(currentIndex);
-        }, 10);
+            index--;
+            moveSlide(index);
+        }, 20);
     } else {
-        currentIndex--;
-        updateSlide(currentIndex);
+        index--;
+        moveSlide(index);
     }
 }
 
-function startAutoSlide() {
-    interval = setInterval(nextSlide, 3000);
+/* ---------- 자동 ---------- */
+function startAuto() {
+    stopAuto();
+    interval = setInterval(next, 4000);
+}
+function stopAuto() {
+    if (interval) clearInterval(interval);
 }
 
-function resetAutoSlide() {
-    clearInterval(interval);
-    startAutoSlide();
-}
-
-nextBtn.addEventListener('click', () => {
-    nextSlide();
-    resetAutoSlide();
+/* ---------- 버튼 ---------- */
+nextBtn.addEventListener("click", () => {
+    next();
+    startAuto();
+});
+prevBtn.addEventListener("click", () => {
+    prev();
+    startAuto();
 });
 
-prevBtn.addEventListener('click', () => {
-    prevSlide();
-    resetAutoSlide();
-});
-
-mainDots.forEach((slideDots, index) => {
-    slideDots.addEventListener('click', () => {
-        currentIndex = index;
-        updateSlide(currentIndex);
-        resetAutoSlide();
+/* ---------- 닷 ---------- */
+dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+        index = i;
+        moveSlide(index);
+        startAuto();
     });
 });
 
-startAutoSlide();
-
-
-
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const track = document.querySelector(".carousel_track");
-//     const leftButton = document.querySelector(".carousel_button.left");
-//     const rightButton = document.querySelector(".carousel_button.right");
-//     const dots = document.querySelectorAll(".dot");
-//     const totalImages = 15;
-//     const imageWidth = 285;
-    
-//     let itemsPerSlide;
-//     let slideWidth;
-//     let totalActualSlides;
-//     let currentSlide = 0;
-//     let autoSlideInterval;
-
-//     function updateItemsPerSlide() {
-//         if (window.innerWidth >= 1440) {
-//             itemsPerSlide = 5;
-//         } else if (window.innerWidth >= 960) {
-//             itemsPerSlide = 3;
-//         } else if (window.innerWidth >= 640) {
-//             itemsPerSlide = 2;
-//         } else {
-//             itemsPerSlide = 1;
-//         }
-//         slideWidth = itemsPerSlide * imageWidth;
-//         totalActualSlides = Math.ceil(totalImages / itemsPerSlide);
-//         track.style.width = `${slideWidth}px`; // 가시 영역 조정
-//         track.parentElement.style.overflow = "hidden"; // 넘치는 이미지 숨김
-//     }
-
-//     function addClones() {
-//         const carouselItems = document.querySelectorAll(".recommended_restaurant");
-//         if (carouselItems.length < itemsPerSlide) return;
-
-//         for (let i = 0; i < itemsPerSlide; i++) {
-//             const clone = carouselItems[i].cloneNode(true);
-//             track.appendChild(clone);
-//         }
-//     }
-
-//     function updateCarousel(instant = false) {
-//         if (instant) {
-//             track.style.transition = "none";
-//         } else {
-//             track.style.transition = "transform 0.5s ease";
-//         }
-//         track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
-
-//         let dotIndex = currentSlide % totalActualSlides;
-//         dots.forEach((dot, index) => {
-//             dot.classList.toggle("active", index === dotIndex);
-//         });
-//     }
-
-//     rightButton.addEventListener("click", () => {
-//         currentSlide++;
-//         updateCarousel();
-//     });
-
-//     leftButton.addEventListener("click", () => {
-//         if (currentSlide === 0) return;
-//         currentSlide--;
-//         updateCarousel();
-//     });
-
-//     dots.forEach((dot, index) => {
-//         dot.addEventListener("click", () => {
-//             currentSlide = index;
-//             updateCarousel();
-//         });
-//     });
-
-//     track.addEventListener("transitionend", () => {
-//         if (currentSlide >= totalActualSlides) {
-//             currentSlide = 0;
-//             updateCarousel(true);
-//         }
-//     });
-
-//     function startAutoSlide() {
-//         stopAutoSlide();
-//         autoSlideInterval = setInterval(() => {
-//             currentSlide++;
-//             updateCarousel();
-//         }, 3000);
-//     }
-
-//     function stopAutoSlide() {
-//         if (autoSlideInterval) {
-//             clearInterval(autoSlideInterval);
-//         }
-//     }
-
-//     window.addEventListener("resize", () => {
-//         stopAutoSlide();
-//         updateItemsPerSlide();
-//         updateCarousel(true);
-//         if (window.innerWidth < 960) {
-//             leftButton.style.display = "none";
-//             rightButton.style.display = "none";
-//             dots.forEach(dot => dot.style.display = "none");
-//         } else {
-//             leftButton.style.display = "block";
-//             rightButton.style.display = "block";
-//             dots.forEach(dot => dot.style.display = "block");
-//         }
-//         startAutoSlide();
-//     });
-
-//     updateItemsPerSlide();
-//     addClones();
-//     updateCarousel(true);
-//     startAutoSlide();
-// });
+/* ---------- 시작 ---------- */
+moveSlide(0, false);
+startAuto();
 
 
 

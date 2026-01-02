@@ -127,11 +127,11 @@ function initSlider() {
     updateDots();
 }
 
-prevBtn.addEventListener("click", () => {
+carouselPrevBtn.addEventListener("click", () => {
     prevSlide();
     startAutoSlide(); // reset timer
 });
-nextBtn.addEventListener("click", () => {
+carouselNextBtn.addEventListener("click", () => {
     nextSlide();
     startAutoSlide(); // reset timer
 });

@@ -97,6 +97,7 @@ header {
     left: 0;
     width: 100%;
     transition: 0.7s;
+     pointer-events: none;
 }
 
 header>p {
@@ -109,6 +110,9 @@ header>p {
     text-align: center;
     background-color: #FF3D00;
 
+}
+header * {
+    pointer-events: auto;
 }
 
 header.hide {
@@ -173,6 +177,7 @@ header.hide {
     overflow: hidden;
     position: absolute;
     top: 0;
+    z-index: 1;
 }
 
 .slides {
@@ -180,19 +185,16 @@ header.hide {
     width: 600%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
+     pointer-events: auto;
+     position: relative;
 }
 
-.slide{
-    width: 100%;
-    height: 100vh;
-    flex-shrink: 0;
+.slides img {
+    pointer-events: none;
 }
 
-.slide > li > img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
+
+
 
 .slides>li {
     position: relative;
@@ -231,8 +233,10 @@ header.hide {
     padding: 15px;
     cursor: pointer;
     font-size: 18px;
-    z-index: 10;
+    z-index: 1000;
 }
+
+
 
 .prev {
     left: 10px;
@@ -251,7 +255,7 @@ header.hide {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    z-index: 999px;
+    z-index: 999;
 }
 
 .slideDot{
@@ -265,6 +269,8 @@ header.hide {
 .slideDot.active {
     background: #FF3D00;
 }
+
+
 
 /* 닷 네비게이션 */
 .dots {
